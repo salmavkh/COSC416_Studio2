@@ -31,12 +31,13 @@ public class BallController : MonoBehaviour
         // "now that the ball is not launched, set it to true and launch the ball"
         isBallLaunched = true;
         transform.parent = null;
+        ballRB.isKinematic = false;
 
         ballRB.AddForce(launchIndicator.forward * force, ForceMode.Impulse);
         launchIndicator.gameObject.SetActive(false);
 
-        ballRB.isKinematic = false;
-        // this sets the object to the outermost layer of the hierarchy
-        ballRB.AddForce(transform.forward * force, ForceMode.Impulse);
+        // ballRB.isKinematic = false;
+        // // this sets the object to the outermost layer of the hierarchy
+        // ballRB.AddForce(transform.forward * force, ForceMode.Impulse);
     }
 }
